@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Plinths - Official Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            overflow: hidden;
+            background-color: #000;
+        }
+        
+        #videoContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        #backgroundVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        #imageBackground {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            display: none;
+        }
+        
+        #content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 6rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-align: center;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .info {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .highlight {
+            color: #ff4d4d;
+            font-weight: 700;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: white;
+            color: black;
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .info {
+                font-size: 1.2rem;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="videoContainer">
+        <video id="backgroundVideo" autoplay muted>
+            <source src="assets/band-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <div id="imageBackground"></div>
+    
+    <div id="content">
+        <h1>The Plinths</h1>
+        <div class="info">
+            Our new single <span class="highlight">"Hive"</span> from the EP <span class="highlight">"Alive in the Hive"</span> is out on <span class="highlight">April 30th, 2025</span>
+        </div>
+        <div class="social-links">
+            <!--<a href="https://soundcloud.com/the-plinths" target="_blank">SoundCloud</a>
+            <a href="https://www.youtube.com/@theplinths" target="_blank">YouTube</a>-->
+            <a href="https://instagram.com/theplinthsmusic" target="_blank">Instagram</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('content');
+            const imageBackground = document.getElementById('imageBackground');
+            
+            // Hide video container immediately
+            document.getElementById('videoContainer').style.display = 'none';
+            
+            // Show background image immediately
+            imageBackground.style.display = 'block';
+            imageBackground.style.backgroundImage = "url('assets/band-background.jpg')";
+            
+            // Show content overlay with band info immediately
+            content.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
