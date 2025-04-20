@@ -14,65 +14,74 @@
         body {
             font-family: 'Montserrat', sans-serif;
             color: white;
-            overflow: hidden;
             background-color: #000;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/band-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         #videoContainer {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            z-index: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
         
-        #backgroundVideo {
+        #mainVideo {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        #imageBackground {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-size: cover;
-            background-position: center;
-            display: none;
+            display: block;
         }
         
         #content {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: none;
+            display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             padding: 20px;
-            z-index: 2;
+            text-align: center;
         }
         
         h1 {
-            font-size: 6rem;
+            font-size: 4.5rem;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 10px;
+            letter-spacing: 8px;
             text-align: center;
             font-weight: 700;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
         
         .info {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
             text-align: center;
             max-width: 800px;
         }
@@ -85,38 +94,69 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
+            gap: 20px;
+            margin-top: 30px;
         }
         
         .social-links a {
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: 2px solid white;
             border-radius: 30px;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .social-links a:hover {
             background-color: white;
             color: black;
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+        }
+        
+        .youtube {
+            background-color: #ff0000;
+            border-color: #ff0000;
+        }
+        
+        .youtube:hover {
+            background-color: #ffffff;
+            color: #ff0000;
+        }
+        
+        .instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border: none;
+        }
+        
+        .instagram:hover {
+            background: white;
+            color: #dc2743;
         }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
+                letter-spacing: 5px;
             }
             
             .info {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             
             .social-links {
                 flex-direction: column;
                 gap: 15px;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .social-links a {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -126,41 +166,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div id="videoContainer">
-        <video id="backgroundVideo" autoplay muted>
-            <source src="assets/band-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    
-    <div id="imageBackground"></div>
-    
-    <div id="content">
-        <h1>The Plinths</h1>
-        <div class="info">
-            Our new single <span class="highlight">"Hive"</span> from the EP <span class="highlight">"Alive in the Hive"</span> is out on <span class="highlight">April 30th, 2025</span>
+    <div class="container">
+        <div id="videoContainer">
+            <video id="mainVideo" autoplay muted loop>
+                <source src="assets/band-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        <div class="social-links">
-            <!--<a href="https://soundcloud.com/the-plinths" target="_blank">SoundCloud</a>
-            <a href="https://www.youtube.com/@theplinths" target="_blank">YouTube</a>-->
-            <a href="https://instagram.com/theplinthsmusic" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        
+        <div id="content">
+            <h1>The Plinths</h1>
+            <div class="info">
+                Our new single <span class="highlight">"Hive"</span> from the EP <span class="highlight">"Alive in the Hive"</span> is out on <span class="highlight">April 30th, 2025</span>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/theplinthsmusic" target="_blank" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const content = document.getElementById('content');
-            const imageBackground = document.getElementById('imageBackground');
+            // Make sure the video starts playing
+            const video = document.getElementById('mainVideo');
+            video.play().catch(error => {
+                console.log("Video playback was prevented: ", error);
+            });
             
-            // Hide video container immediately
-            document.getElementById('videoContainer').style.display = 'none';
-            
-            // Show background image immediately
-            imageBackground.style.display = 'block';
-            imageBackground.style.backgroundImage = "url('assets/band-background.jpg')";
-            
-            // Show content overlay with band info immediately
-            content.style.display = 'flex';
+            // Add controls after 2 seconds for better user experience
+            setTimeout(() => {
+                video.controls = true;
+            }, 2000);
         });
     </script>
 </body>
