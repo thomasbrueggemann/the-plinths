@@ -4,201 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Plinths - Official Website</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            background-color: #000;
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            overflow-x: hidden;
-        }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('assets/band-background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.15;
-            z-index: -1;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 900px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        #videoContainer {
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        
-        #mainVideo {
-            width: 100%;
-            display: block;
-        }
-        
-        #content {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        h1 {
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            text-align: center;
-            font-weight: 700;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-        
-        .info {
-            font-size: 1.6rem;
-            margin-bottom: 30px;
-            text-align: center;
-            max-width: 800px;
-        }
-        
-        .highlight {
-            color: #ff4d4d;
-            font-weight: 700;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.3rem;
-            text-decoration: none;
-            padding: 12px 25px;
-            border: 2px solid white;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .social-links a:hover {
-            background-color: white;
-            color: black;
-            transform: translateY(-3px);
-        }
-        
-        .youtube {
-            background-color: #ff0000;
-            border-color: #ff0000;
-        }
-        
-        .youtube:hover {
-            background-color: #ffffff;
-            color: #ff0000;
-        }
-        
-        .instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            border: none;
-        }
-        
-        .instagram:hover {
-            background: white;
-            color: #dc2743;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-                letter-spacing: 5px;
-            }
-            
-            .info {
-                font-size: 1.1rem;
-            }
-            
-            .social-links {
-                flex-direction: column;
-                gap: 15px;
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .social-links a {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div id="videoContainer">
-            <video id="mainVideo" autoplay muted loop>
-                <source src="assets/band-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <!-- Horizontal navigation arrows -->
+    <div class="nav-arrow left" id="prevSection">
+        <i class="fas fa-chevron-left"></i>
+        <span class="nav-hint"></span>
+    </div>
+    
+    <div class="nav-arrow right" id="nextSection">
+        <i class="fas fa-chevron-right"></i>
+        <span class="nav-hint"></span>
+    </div>
+
+    <div class="scroll-container">
+        <!-- Home Section -->
+        <div id="home" class="section">
+            <div class="container">
+                <div id="videoContainer">
+                    <video id="mainVideo" muted loop controls>
+                        <source src="assets/band-video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <div id="content">
+                    <h1>The Plinths</h1>
+                    <div class="info">
+                        The new single <span class="highlight">HIVE</span> from the EP <span class="highlight">ALIVE IN THE HIVE</span> is out on <span class="highlight">April 30th, 2025</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://instagram.com/theplinthsmusic" target="_blank" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+            </div>
         </div>
         
-        <div id="content">
-            <h1>The Plinths</h1>
-            <div class="info">
-                The new single <span class="highlight">"HIVE"</span> from the EP <span class="highlight">"ALIVE IN THE HIVE"</span> is out on <span class="highlight">April 30th, 2025</span>
-            </div>
-            <div class="social-links">
-                <a href="https://instagram.com/theplinthsmusic" target="_blank" class="instagram"><i class="fab fa-instagram"></i> Instagram</a>
-            </div>
+        <!-- About Section -->
+        <div id="about" class="section">
+            <section>
+                <h2>The Band</h2>
+                <div class="band-members-grid">
+                    <div class="band-member">
+                        <div class="band-member-photo">
+                            <img src="assets/band-members/member-1.png" alt="Nacho" />
+                        </div>
+                        <div class="band-member-details">
+                            <h3>NACHO</h3>
+                            <p><b>VOX & BASS</b></p>
+                            <p style="margin-top:15px">Nacho plays mostly the bass, but sometimes also 6-strings of a guitar. He founded The Plinths in 2023 together with Johan.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="band-member">
+                        <div class="band-member-photo">
+                            <img src="assets/band-members/member-2.png" alt="Johan" />
+                        </div>
+                        <div class="band-member-details">
+                            <h3>JOHAN</h3>
+                            <p><b>DRUMS</b></p>
+                            <p style="margin-top:15px">Johan founded the band together with Nacho in 2023 and drives the rhythm with his drum skills.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="band-member">
+                        <div class="band-member-photo">
+                            <img src="assets/band-members/member-3.png" alt="Tom" />
+                        </div>
+                        <div class="band-member-details">
+                            <h3>TOM</h3>
+                            <p><b>GUITAR</b></p>
+                            <p style="margin-top:15px">Tom plays guitar, and sometimes bass. He joined the band in early 2025 and likes to contribute layers of guitar sounds.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Photos Section -->
+        <div id="photos" class="section">
+            <section>
+                <h2>Photos</h2>
+                <div class="photos-grid">
+                    <div class="photo-item" data-photo="1">
+                        <img src="assets/photos/photo1.jpg" alt="Band Photo 1">
+                    </div>
+                    <div class="photo-item" data-photo="2">
+                        <img src="assets/photos/photo2.jpg" alt="Band Photo 2">
+                    </div>
+                    <div class="photo-item" data-photo="3">
+                        <img src="assets/photos/photo3.jpg" alt="Band Photo 3">
+                    </div>
+                    <div class="photo-item" data-photo="4">
+                        <img src="assets/photos/photo4.jpg" alt="Band Photo 4">
+                    </div>
+                    <div class="photo-item" data-photo="5">
+                        <img src="assets/photos/photo5.jpg" alt="Band Photo 5">
+                    </div>
+                    <div class="photo-item" data-photo="6">
+                        <img src="assets/photos/photo6.jpg" alt="Band Photo 6">
+                    </div>
+
+                    <div class="photo-item" data-photo="7">
+                        <img src="assets/photos/photo7.jpg" alt="Band Photo 7">
+                    </div>
+                    <div class="photo-item" data-photo="8">
+                        <img src="assets/photos/photo8.jpg" alt="Band Photo 8">
+                    </div>
+                    <div class="photo-item" data-photo="9">
+                        <img src="assets/photos/photo9.jpg" alt="Band Photo 9">
+                    </div>
+                    <div class="photo-item" data-photo="10">
+                        <img src="assets/photos/photo10.jpg" alt="Band Photo 10">
+                    </div>
+                    <div class="photo-item" data-photo="11">
+                        <img src="assets/photos/photo11.jpg" alt="Band Photo 11">
+                    </div>
+                    <div class="photo-item" data-photo="12">
+                        <img src="assets/photos/photo12.jpg" alt="Band Photo 12">
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Make sure the video starts playing
-            const video = document.getElementById('mainVideo');
-            video.play().catch(error => {
-                console.log("Video playback was prevented: ", error);
-            });
-            
-            // Add controls after 2 seconds for better user experience
-            setTimeout(() => {
-                video.controls = true;
-            }, 2000);
-        });
-    </script>
+    <div class="photo-modal">
+        <div class="photo-modal-content">
+            <span class="close-modal"><i class="fas fa-times"></i></span>
+            <img src="" alt="Enlarged photo">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
