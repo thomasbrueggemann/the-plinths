@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Handle mobile navigation - completely remove nav arrows on mobile
+    function handleMobileNavigation() {
+        const prevButton = document.getElementById('prevSection');
+        const nextButton = document.getElementById('nextSection');
+        
+        if (window.innerWidth <= 768) {
+            // On mobile, remove the navigation arrows completely
+            if (prevButton) prevButton.parentNode.removeChild(prevButton);
+            if (nextButton) nextButton.parentNode.removeChild(nextButton);
+        }
+    }
+    
+    // Run on page load
+    handleMobileNavigation();
+    
+    // Run on resize
+    window.addEventListener('resize', handleMobileNavigation);
+    
     // Video functionality
     const video = document.getElementById('mainVideo');
     
