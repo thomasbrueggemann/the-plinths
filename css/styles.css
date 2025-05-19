@@ -295,6 +295,36 @@ h1 {
     color: #dc2743;
 }
 
+.spotify {
+    background-color: #1DB954;
+    border-color: #1DB954;
+}
+
+.spotify:hover {
+    background-color: #ffffff;
+    color: #1DB954;
+}
+
+.apple-music {
+    background-color: #FB233B;
+    border-color: #FB233B;
+}
+
+.apple-music:hover {
+    background-color: #ffffff;
+    color: #FB233B;
+}
+
+.youtube-music {
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+
+.youtube-music:hover {
+    background-color: #ffffff;
+    color: #FF0000;
+}
+
 @media (max-width: 768px) {
     h1 {
         font-size: 3rem;
