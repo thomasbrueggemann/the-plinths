@@ -366,8 +366,12 @@ h1 {
         padding: 10px 0;
     }
     
-    #videoContainer {
+    .vertical-video, #videoContainer {
         margin-bottom: 20px;
+    }
+    
+    .home-content .social-links {
+        margin: 0 auto;
     }
 }
 
@@ -645,5 +649,63 @@ section h2::after {
 @media (max-width: 480px) {
     .photos-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Home page with side-by-side layout */
+.home-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.vertical-video {
+    width: 45%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
+}
+
+.vertical-video video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.home-content {
+    width: 50%;
+    text-align: left;
+    padding: 0;
+}
+
+.home-content h1 {
+    text-align: left;
+}
+
+/* Mobile responsive layout for home page */
+@media (max-width: 1024px) {
+    .home-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .vertical-video {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .home-content {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .home-content h1 {
+        text-align: center;
     }
 }
