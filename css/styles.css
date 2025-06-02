@@ -487,6 +487,54 @@ section h2::after {
     to { opacity: 1; }
 }
 
+/* Bio section */
+.bio-header {
+    max-width: 800px;
+    height: 300px;
+    overflow: hidden;
+    margin: 30px auto 40px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.bio-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8);
+    transition: transform 0.3s ease;
+}
+
+.bio-header:hover img {
+    transform: scale(1.03);
+}
+
+.bio-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bio-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .bio-header {
+        height: 200px;
+        margin-bottom: 30px;
+    }
+    
+    .bio-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
 /* Photos section */
 .photos-grid {
     display: grid;

@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sectionNames = {
         'home': 'Home',
         'about': 'Band',
+        'bio': 'Biography',
         'photos': 'Photos'
     };
     
