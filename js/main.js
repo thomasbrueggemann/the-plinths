@@ -146,8 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (targetSection) {
             targetSection.scrollIntoView({ behavior: 'smooth', inline: 'start' });
-            // Update URL hash without adding to browser history
-            history.replaceState(null, null, `#${sectionId}`);
+            // No URL hash update
         }
     }
     
@@ -209,40 +208,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (sections[currentIndex]) {
             currentSectionId = sections[currentIndex].getAttribute('id');
-            
-            // Update URL hash without adding to browser history
-            if (window.location.hash !== `#${currentSectionId}`) {
-                history.replaceState(null, null, `#${currentSectionId}`);
-            }
+            // No URL hash update
         }
         
         // Update navigation arrows whenever active section changes
         updateNavigationArrows();
     }
     
-    // Handle deeplink navigation from URL hash on page load
-    function handleDeepLink() {
-        const hash = window.location.hash;
-        if (hash) {
-            const targetSectionId = hash.slice(1); // Remove the # character
-            const targetSection = document.getElementById(targetSectionId);
-            
-            if (targetSection) {
-                // Use setTimeout to ensure the navigation happens after the page is fully loaded
-                setTimeout(() => {
-                    targetSection.scrollIntoView({ behavior: 'smooth', inline: 'start' });
-                }, 100);
-            }
-        }
-    }
-    
-    // Run deeplink handling on page load
-    handleDeepLink();
-    
-    // Listen for hash changes in the URL
-    window.addEventListener('hashchange', function() {
-        handleDeepLink();
-    });
+    // No deep linking from URL hash
     
     // Handle scroll events and snap to sections
     let isScrolling = false;
