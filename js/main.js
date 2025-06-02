@@ -38,6 +38,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Enable vertical scrolling for biography section
+    const bioSection = document.getElementById('bio');
+    if (bioSection) {
+        bioSection.style.overflowY = 'auto';
+        
+        // Prevent horizontal scroll container from capturing wheel events in biography section
+        bioSection.addEventListener('wheel', function(e) {
+            // Allow vertical scrolling within the biography section
+            const isAtTop = this.scrollTop === 0;
+            const isAtBottom = this.scrollHeight - this.scrollTop === this.clientHeight;
+            
+            // Only prevent default if we're not at the top/bottom or if scrolling in the appropriate direction
+            if ((e.deltaY > 0 && !isAtBottom) || (e.deltaY < 0 && !isAtTop)) {
+                e.stopPropagation();
+            }
+        });
+    }
+    
     // Band member carousel functionality
     const bandMembers = [
         {
@@ -113,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Horizontal scroll functionality
     const scrollContainer = document.querySelector('.scroll-container');
     const sections = document.querySelectorAll('.section');
-    const navDots = document.querySelectorAll('.nav-dot');
     const prevButton = document.getElementById('prevSection');
     const nextButton = document.getElementById('nextSection');
     const sectionNames = {
@@ -122,6 +139,17 @@ document.addEventListener('DOMContentLoaded', function() {
         'bio': 'Biography',
         'photos': 'Photos'
     };
+    
+    // Function to handle navigating to a specific section
+    function navigateToSection(sectionId) {
+        const targetSection = document.getElementById(sectionId);
+        
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+            // Update URL hash without adding to browser history
+            history.replaceState(null, null, `#${sectionId}`);
+        }
+    }
     
     // Function to update navigation arrows and hints
     function updateNavigationArrows() {
@@ -155,33 +183,25 @@ document.addEventListener('DOMContentLoaded', function() {
         return Math.round(scrollPosition / viewportWidth);
     }
     
-    // Navigation dots click event
-    navDots.forEach(dot => {
-        dot.addEventListener('click', () => {
-            const sectionId = dot.getAttribute('data-section');
-            const targetSection = document.getElementById(sectionId);
-            
-            targetSection.scrollIntoView({ behavior: 'smooth', inline: 'start' });
-        });
-    });
-    
     // Navigation arrow click events
     prevButton.addEventListener('click', () => {
         const currentIndex = getCurrentSectionIndex();
         if (currentIndex > 0) {
-            sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+            const prevSectionId = sections[currentIndex - 1].getAttribute('id');
+            navigateToSection(prevSectionId);
         }
     });
     
     nextButton.addEventListener('click', () => {
         const currentIndex = getCurrentSectionIndex();
         if (currentIndex < sections.length - 1) {
-            sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+            const nextSectionId = sections[currentIndex + 1].getAttribute('id');
+            navigateToSection(nextSectionId);
         }
     });
     
-    // Update active nav dot based on scroll position
-    function updateNavDots() {
+    // Update navigation based on scroll position
+    function updateNavigation() {
         let currentSectionId = '';
         const scrollPosition = scrollContainer.scrollLeft;
         const viewportWidth = window.innerWidth;
@@ -189,18 +209,40 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (sections[currentIndex]) {
             currentSectionId = sections[currentIndex].getAttribute('id');
-        }
-        
-        navDots.forEach(dot => {
-            dot.classList.remove('active');
-            if (dot.getAttribute('data-section') === currentSectionId) {
-                dot.classList.add('active');
+            
+            // Update URL hash without adding to browser history
+            if (window.location.hash !== `#${currentSectionId}`) {
+                history.replaceState(null, null, `#${currentSectionId}`);
             }
-        });
+        }
         
         // Update navigation arrows whenever active section changes
         updateNavigationArrows();
     }
+    
+    // Handle deeplink navigation from URL hash on page load
+    function handleDeepLink() {
+        const hash = window.location.hash;
+        if (hash) {
+            const targetSectionId = hash.slice(1); // Remove the # character
+            const targetSection = document.getElementById(targetSectionId);
+            
+            if (targetSection) {
+                // Use setTimeout to ensure the navigation happens after the page is fully loaded
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+                }, 100);
+            }
+        }
+    }
+    
+    // Run deeplink handling on page load
+    handleDeepLink();
+    
+    // Listen for hash changes in the URL
+    window.addEventListener('hashchange', function() {
+        handleDeepLink();
+    });
     
     // Handle scroll events and snap to sections
     let isScrolling = false;
@@ -208,8 +250,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollDelay = 1000; // Delay in ms before accepting another scroll
     
     scrollContainer.addEventListener('scroll', () => {
-        // Update nav dots on any scroll
-        updateNavDots();
+        // Update navigation on any scroll
+        updateNavigation();
         
         // Only handle scroll snapping if not currently scrolling
         if (!isScrolling) {
@@ -220,11 +262,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Mouse wheel navigation has been disabled as requested
-    // Navigation is now only available through nav dots and arrow buttons
-    
-    // Initialize the active nav dot
-    updateNavDots();
+    // Initialize the navigation
+    updateNavigation();
     
     // Mobile touch support for scrolling between sections
     let touchStartY = 0;
@@ -264,7 +303,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            const sectionId = targetSection.getAttribute('id');
+            navigateToSection(sectionId);
             
             setTimeout(() => {
                 isScrolling = false;
