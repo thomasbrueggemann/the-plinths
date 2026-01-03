@@ -213,7 +213,6 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 30px;
 }
 
 .social-links a {
@@ -233,6 +232,72 @@ h1 {
     background-color: white;
     color: black;
     transform: translateY(-3px);
+}
+
+/* Upcoming Shows */
+.upcoming-shows {
+    margin-top: 50px;
+    padding: 30px;
+    border: 2px solid #ff4d4d;
+    border-radius: 15px;
+    background-color: rgba(255, 77, 77, 0.05);
+    max-width: 600px;
+    width: 100%;
+}
+
+.upcoming-shows h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #ff4d4d;
+}
+
+.show {
+    text-align: center;
+    padding: 15px;
+}
+
+.show-date {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.show-venue {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.show-location {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .upcoming-shows {
+        margin-top: 30px;
+        padding: 20px;
+    }
+    
+    .upcoming-shows h3 {
+        font-size: 1.5rem;
+    }
+    
+    .show-date {
+        font-size: 1.2rem;
+    }
+    
+    .show-venue {
+        font-size: 1.1rem;
+    }
+    
+    .show-location {
+        font-size: 1rem;
+    }
 }
 
 .youtube {
