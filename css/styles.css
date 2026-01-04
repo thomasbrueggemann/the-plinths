@@ -303,6 +303,25 @@ h1 {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.show-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+}
+
+.show-description a {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.show-description a:hover {
+    color: #ff6b6b;
+    border-bottom-color: #ff6b6b;
+}
+
 @media (max-width: 768px) {
     .upcoming-shows {
         margin-top: 30px;
