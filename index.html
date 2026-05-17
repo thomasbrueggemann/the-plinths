@@ -1,221 +1,326 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Plinths - Official Website</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Plinths — Official Website</title>
+<meta name="description" content="The Plinths are an alternative rock band from Lund, Sweden. Listen to their debut EP 'Alive in the Hive', recorded live at Tambourine Studios in Malmö." />
+<meta name="keywords" content="The Plinths, alternative rock, Lund, Sweden, Alive in the Hive, live music, Tambourine Studios" />
+<meta name="author" content="The Plinths" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="The Plinths — Alternative Rock from Lund, Sweden" />
+<meta property="og:description" content="Listen to the debut EP 'Alive in the Hive', recorded live at Tambourine Studios in Malmö." />
+<meta property="og:image" content="assets/band.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The Plinths — Alternative Rock from Lund, Sweden" />
+<meta name="twitter:description" content="Listen to the debut EP 'Alive in the Hive', recorded live at Tambourine Studios in Malmö." />
+<meta name="twitter:image" content="assets/band.jpg" />
+
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="icon" href="assets/logo.png" />
 </head>
-
 <body>
-    <div class="scroll-container">
-        <!-- Home Section -->
-        <div id="home" class="section">
-            <div class="container home-container">
-                <div id="videoContainer" class="vertical-video">
-                    <video id="mainVideo" muted loop controls autoplay>
-                        <source src="assets/band-video-2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
 
-                <div id="content" class="home-content">
-                    <h1>The Plinths</h1>
-                    <div class="info">
-                        Our EP <span class="highlight">ALIVE IN THE HIVE</span> is out now on all platforms:
-                    </div>
-                    <div class="social-links">
-                        <a href="https://instagram.com/theplinthsmusic" target="_blank" class="instagram"><i
-                                class="fab fa-instagram"></i> Instagram</a>
-                        <a href="https://music.apple.com/us/artist/the-plinths/1811096214" target="_blank"
-                            class="apple-music"><i class="fab fa-apple"></i> Music</a>
-                        <a href="https://open.spotify.com/artist/41e4nNfsymUFZCxAvE9GiY" target="_blank"
-                            class="spotify"><i class="fab fa-spotify"></i> Spotify</a>
-                        <a href="https://www.youtube.com/@theplinths" target="_blank" class="youtube-music"><i
-                                class="fab fa-youtube"></i> YouTube</a>
-                    </div>
+<!-- ====================== NAV ====================== -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav-logo">
+    <img src="assets/logo.png" alt="The Plinths" />
+    <span>PLINTHS</span>
+  </a>
+  <div class="nav-links">
+    <a href="#video">Video</a>
+    <a href="#release">Music</a>
+    <a href="#shows">Shows</a>
+    <a href="#about">About</a>
+    <a href="#photos">Photos</a>
+  </div>
+  <div class="nav-socials">
+    <a href="https://open.spotify.com/artist/41e4nNfsymUFZCxAvE9GiY" target="_blank" rel="noopener" aria-label="Spotify">
+      <svg class="brand-icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12C24 5.4 18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.56.3z"/></svg>
+    </a>
+    <a href="https://music.apple.com/us/artist/the-plinths/1811096214" target="_blank" rel="noopener" aria-label="Apple Music">
+      <svg class="brand-icon apple" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@theplinths" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg class="brand-icon youtube" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+    <a href="https://instagram.com/theplinthsmusic" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg class="brand-icon instagram" viewBox="0 0 24 24" aria-hidden="true">
+        <defs><linearGradient id="ig-grad-nav" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs>
+        <path fill="url(#ig-grad-nav)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+      </svg>
+    </a>
+  </div>
+</nav>
 
-                    <div class="upcoming-shows">
-                        <h3>Upcoming Shows</h3>
-                        <div class="show">
-                            <div class="show-datetime">
-                                <div class="show-date">Fr 27 Feb</div>
-                                <div class="show-time">19.00h</div>
-                            </div>
-                            <div class="show-details">
-                                <div class="show-venue">The Bowery Room vol. 40</div>
-                                <div class="show-location">Råhuset, Copenhagen</div>
-                                <div class="show-description">
-                                    <a href="https://www.facebook.com/events/852432490738526" target="_blank">Facebook
-                                        Event</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="show">
-                            <div class="show-datetime">
-                                <div class="show-date">Fr 29 May</div>
-                                <div class="show-time">20.00h</div>
-                            </div>
-                            <div class="show-details">
-                                <div class="show-venue">Mässingshornet</div>
-                                <div class="show-location">Malmö</div>
-                            </div>
-                        </div>
-                    </div>
+<!-- ====================== TOP / LOGO ====================== -->
+<header class="top" id="top">
+  <a href="https://www.youtube.com/@CAPSULADK" target="_blank" rel="noopener" class="photo-credit top-credit">© CAPSULA.DK</a>
+  <div class="top-mark float">
+    <img src="assets/logo.png" alt="The Plinths logo — bee, profile, hexagon" />
+  </div>
+  <h1 class="top-name">
+    <span class="the">The</span>
+    Plinths
+  </h1>
+
+</header>
+
+<!-- ====================== HERO VIDEO ====================== -->
+<section class="hero section" id="video" data-screen-label="Hero · Video">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="container">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-row">
+        <span class="pulse"></span>
+        Now Playing — Official Music Video
+      </span>
+    </div>
+    <h2 class="hero-title">Watch <span class="accent">Live</span></h2>
+
+    <div class="video-wrap float">
+      <span class="video-ticker top-left">Live in Malmö</span>
+      <span class="video-ticker top-right">Capsula Session</span>
+      <span class="video-ticker bot-left">May 2026</span>
+      <span class="video-ticker bot-right">Unreleased Songs</span>
+
+      <div class="video-frame">
+        <div class="video-frame-inner-1">
+          <div class="video-frame-inner-2">
+            <div class="video-frame-inner-3">
+              <div class="video-aspect">
+                <div class="video-poster" id="videoPoster"
+                     style="background-image:url('https://i.ytimg.com/vi/Z06eoUzI-Hk/maxresdefault.jpg');">
+                  <button class="play" aria-label="Play video">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                  </button>
+                  <div class="video-caption">
+                    <span class="title">Hive</span>
+                    <span>The Plinths · 2025</span>
+                  </div>
                 </div>
+                <iframe id="videoFrame" loading="lazy"
+                        src=""
+                        title="The Plinths — Hive"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- About Section -->
-        <div id="about" class="section">
-            <section>
-                <h2>The Band</h2>
-                <div class="band-members-grid">
-                    <div class="band-member">
-                        <div class="band-member-photo">
-                            <img src="assets/band-members/member-1.png" alt="Nacho" />
-                        </div>
-                        <div class="band-member-details">
-                            <h3>NACHO</h3>
-                            <p><b>VOX & GUITAR</b></p>
-                            <p style="margin-top:15px">Nacho is from Buenos Aires, Argentina. He plays Guitar and is the
-                                chosen one to sing the words. He founded The Plinths in 2023 together with Johan.</p>
-                        </div>
-                    </div>
-
-                    <div class="band-member">
-                        <div class="band-member-photo">
-                            <img src="assets/band-members/member-2.png" alt="Johan" />
-                        </div>
-                        <div class="band-member-details">
-                            <h3>JOHAN</h3>
-                            <p><b>DRUMS</b></p>
-                            <p style="margin-top:15px">Johan is Swedish, he is the drummer. He drives the songs. He feel
-                                the beat. He loves to dance to 80s music.</p>
-                        </div>
-                    </div>
-
-                    <div class="band-member">
-                        <div class="band-member-photo">
-                            <img src="assets/band-members/member-3.png" alt="Tom" />
-                        </div>
-                        <div class="band-member-details">
-                            <h3>TOM</h3>
-                            <p><b>GUITAR</b></p>
-                            <p style="margin-top:15px">Tom is from Germany. He plays guitar and joined the band in early
-                                2025 and likes to contribute layers of guitar sounds and atmospheric melodies. He is a
-                                guitar geek.</p>
-                        </div>
-                    </div>
-
-                    <div class="band-member">
-                        <div class="band-member-photo">
-                            <img src="assets/band-members/member-4.png" alt="Jonas" />
-                        </div>
-                        <div class="band-member-details">
-                            <h3>JONAS</h3>
-                            <p><b>BASS</b></p>
-                            <p style="margin-top:15px">Jonas is from Sweden. Our latest addition and responsible for
-                                making the low end rumble.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Bio Section -->
-        <div id="bio" class="section">
-            <section>
-                <h2>Biography</h2>
-                <div class="bio-content">
-                    <p>The Plinths are an emerging post-punk and alternative rock quartet ready to make their mark on
-                        the Swedish music scene. Based in Lund, this international band creates music that cuts through
-                        modern noise with straightforward energy and honest songwriting.</p>
-                    <p>The Plinths craft songs that are raw but catchy, direct but thoughtful. Ignacio handles vocals
-                        and guitar with conviction, Johan drives the rhythm section, Thomas brings a fresh perspective
-                        on guitar, and Jonas adds his creative bass playing and sound engineering expertise. Together,
-                        they create music that connects without pretense.</p>
-                    <p>Fresh off recording their debut EP "Alive in the Hive" live at Tambourine Studios in Malmö, The
-                        Plinths have just released their first single "Hive" and are eager to bring their sound to
-                        venues across Sweden and beyond. The track introduces their approach—direct, guitar-driven rock
-                        that tackles themes of modern life's monotony and the challenge of staying authentic in a
-                        disconnected world.</p>
-                    <p>The band writes about emotional honesty, social isolation, and the difficulty of expressing
-                        yourself without judgment. Their songs resonate with listeners who appreciate both musical
-                        substance and relatable themes.</p>
-                    <p>The Plinths are ready to bring their sound to venues and festivals, offering audiences rock music
-                        that feels both grounded and energizing.</p>
-                </div>
-            </section>
-        </div>
-
-        <!-- Photos Section -->
-        <div id="photos" class="section">
-            <section>
-                <h2>Photos</h2>
-                <div class="photos-grid">
-                    <div class="photo-item" data-photo="13" data-copyright="© bransholmphoto">
-                        <img src="assets/photos/photo13.jpg" alt="Band Photo 13">
-                    </div>
-                    <div class="photo-item" data-photo="14" data-copyright="© bransholmphoto">
-                        <img src="assets/photos/photo14.jpg" alt="Band Photo 14">
-                    </div>
-                    <div class="photo-item" data-photo="15" data-copyright="© bransholmphoto">
-                        <img src="assets/photos/photo15.jpg" alt="Band Photo 15">
-                    </div>
-                    <div class="photo-item" data-photo="16" data-copyright="© bransholmphoto">
-                        <img src="assets/photos/photo16.jpg" alt="Band Photo 16">
-                    </div>
-                    <div class="photo-item" data-photo="1">
-                        <img src="assets/photos/photo1.jpg" alt="Band Photo 1">
-                    </div>
-                    <div class="photo-item" data-photo="2">
-                        <img src="assets/photos/photo2.jpg" alt="Band Photo 2">
-                    </div>
-                    <div class="photo-item" data-photo="5">
-                        <img src="assets/photos/photo5.jpg" alt="Band Photo 5">
-                    </div>
-                    <div class="photo-item" data-photo="6">
-                        <img src="assets/photos/photo6.jpg" alt="Band Photo 6">
-                    </div>
-                    <div class="photo-item" data-photo="7">
-                        <img src="assets/photos/photo7.jpg" alt="Band Photo 7">
-                    </div>
-                    <div class="photo-item" data-photo="9">
-                        <img src="assets/photos/photo9.jpg" alt="Band Photo 9">
-                    </div>
-                    <div class="photo-item" data-photo="10">
-                        <img src="assets/photos/photo10.jpg" alt="Band Photo 10">
-                    </div>
-                    <div class="photo-item" data-photo="11">
-                        <img src="assets/photos/photo11.jpg" alt="Band Photo 11">
-                    </div>
-                </div>
-            </section>
-        </div>
     </div>
+  </div>
+</section>
 
-    <div class="photo-modal">
-        <div class="photo-modal-content">
-            <span class="close-modal"><i class="fas fa-times"></i></span>
-            <img src="" alt="Enlarged photo">
-            <div class="photo-copyright"></div>
-        </div>
+<!-- ====================== RELEASE ====================== -->
+<section class="section" id="release" data-screen-label="Release">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-num">01 / Release</span>
+      <span class="eyebrow"><span class="dot">●</span> Out Now</span>
     </div>
+    <div class="release">
+      <div class="release-art">
+        <div class="release-art-mark">
+          <img src="assets/logo.png" alt="" />
+        </div>
+        <div class="release-art-tag">
+          <span>EP — Live at Tambourine</span>
+          <span>Side A</span>
+        </div>
+      </div>
+      <div class="release-meta">
+        <span class="eyebrow"><span class="dot">●</span> Debut EP · Tambourine Studios</span>
+        <h3 class="release-title">Alive<br/>in the <em>Hive</em></h3>
+        <p class="release-desc">
+          The Plinths' debut EP, recorded live at Tambourine Studios in Malmö.
+          Direct, guitar-driven alternative rock that cuts through modern noise — raw but catchy,
+          honest songwriting about the monotony of modern life and the challenge of staying real.
+        </p>
+        <div class="streamers">
+          <a class="streamer" href="https://open.spotify.com/artist/41e4nNfsymUFZCxAvE9GiY" target="_blank" rel="noopener">
+            <svg class="brand-icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12C24 5.4 18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.56.3z"/></svg>
+            Spotify <span class="arrow">↗</span>
+          </a>
+          <a class="streamer" href="https://music.apple.com/us/artist/the-plinths/1811096214" target="_blank" rel="noopener">
+            <svg class="brand-icon apple" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Apple Music <span class="arrow">↗</span>
+          </a>
+          <a class="streamer" href="https://www.youtube.com/@theplinths" target="_blank" rel="noopener">
+            <svg class="brand-icon youtube" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            YouTube <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="js/main.js"></script>
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "r7h3kukxa1");
-    </script>
+<!-- ====================== SHOWS ====================== -->
+<section class="section" id="shows" data-screen-label="Shows">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-num">02 / Shows</span>
+      <h2 class="section-title">Upcoming<br/>Shows <em style="color:var(--orange);font-style:italic;">'26</em></h2>
+    </div>
+    <div class="shows-list">
+      <a class="show" href="https://www.facebook.com/events/1618793139403849" target="_blank" rel="noopener">
+        <span class="show-date"><span class="month">May</span>29</span>
+        <span class="show-city">Mässingshornet</span>
+        <span class="show-venue">Malmö · Doors 18:00</span>
+        <span class="show-cta">Facebook Event</span>
+      </a>
+      <a class="show" href="https://fb.me/e/6e5CxBbHy" target="_blank" rel="noopener">
+        <span class="show-date"><span class="month">Sep</span>4–6</span>
+        <span class="show-city">NGBG Festival</span>
+        <span class="show-venue">Malmö</span>
+        <span class="show-cta">Facebook Event</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ABOUT ====================== -->
+<section class="section" id="about" data-screen-label="About">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-num">03 / About</span>
+      <h2 class="section-title">The Band</h2>
+    </div>
+    <div class="about">
+      <div class="about-image">
+        <img src="assets/band.jpg" alt="The Plinths" />
+      </div>
+      <a href="https://www.youtube.com/@CAPSULADK" target="_blank" rel="noopener" class="photo-credit about-credit">© CAPSULA.DK</a>
+      <div class="about-body">
+        <p class="lead">
+          The Plinths are an emerging <span>alternative rock</span>
+          quartet ready to make their mark on the Swedish music scene — based in Lund,
+          this international band creates music that cuts through modern noise with
+          straightforward energy and honest songwriting.
+        </p>
+        <p>
+          Their songs are raw but catchy, direct but thoughtful. Fresh off recording their
+          debut EP "Alive in the Hive" live at Tambourine Studios in Malmö, The Plinths
+          have just released their first single "Hive" and are eager to bring their sound
+          to venues across Sweden and beyond.
+        </p>
+        <p class="muted">
+          The band writes about emotional honesty, social isolation, and the difficulty
+          of expressing yourself without judgment.
+        </p>
+
+        <div class="members">
+          <div class="members-list">
+            <div class="member">
+              <span class="member-name">Nacho</span>
+              <span class="member-role">Vox · Guitar</span>
+            </div>
+            <div class="member">
+              <span class="member-name">Johan</span>
+              <span class="member-role">Drums</span>
+            </div>
+            <div class="member">
+              <span class="member-name">Tom</span>
+              <span class="member-role">Guitar</span>
+            </div>
+            <div class="member">
+              <span class="member-name">Jonas</span>
+              <span class="member-role">Bass</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PHOTOS ====================== -->
+<section class="section" id="photos" data-screen-label="Photos">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-num">04 / Photos</span>
+      <h2 class="section-title">From the<br/>Road</h2>
+    </div>
+    <div class="photos-grid">
+      <div class="photo-item"><img src="assets/photos/photo17.jpg" alt="Band Photo" /></div>
+      <div class="photo-item" data-copyright="© bransholmphoto"><img src="assets/photos/photo13.jpg" alt="Band Photo" /></div>
+      <div class="photo-item" data-copyright="© bransholmphoto"><img src="assets/photos/photo14.jpg" alt="Band Photo" /></div>
+      <div class="photo-item" data-copyright="© bransholmphoto"><img src="assets/photos/photo15.jpg" alt="Band Photo" /></div>
+      <div class="photo-item" data-copyright="© bransholmphoto"><img src="assets/photos/photo16.jpg" alt="Band Photo" /></div>
+      <div class="photo-item"><img src="assets/photos/photo2.jpg" alt="Band Photo" /></div>
+      <div class="photo-item"><img src="assets/photos/photo5.jpg" alt="Band Photo" /></div>
+      <div class="photo-item"><img src="assets/photos/photo6.jpg" alt="Band Photo" /></div>
+      <div class="photo-item"><img src="assets/photos/photo7.jpg" alt="Band Photo" /></div>
+      <div class="photo-item"><img src="assets/photos/photo9.jpg" alt="Band Photo" /></div>
+      <div class="photo-item"><img src="assets/photos/photo10.jpg" alt="Band Photo" /></div>
+      <div class="photo-item"><img src="assets/photos/photo11.jpg" alt="Band Photo" /></div>
+      <div class="photo-item"><img src="assets/photos/photo1.jpg" alt="Band Photo" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-mark">
+        <img src="assets/logo.png" alt="" />
+        <span class="name">The Plinths</span>
+      </div>
+      <div class="footer-socials">
+        <a href="https://instagram.com/theplinthsmusic" target="_blank" rel="noopener">
+          <svg class="brand-icon instagram" viewBox="0 0 24 24" aria-hidden="true">
+            <defs><linearGradient id="ig-grad-2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs>
+            <path fill="url(#ig-grad-2)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="https://open.spotify.com/artist/41e4nNfsymUFZCxAvE9GiY" target="_blank" rel="noopener">
+          <svg class="brand-icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12C24 5.4 18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.56.3z"/></svg>
+          Spotify
+        </a>
+        <a href="https://music.apple.com/us/artist/the-plinths/1811096214" target="_blank" rel="noopener">
+          <svg class="brand-icon apple" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Apple Music
+        </a>
+        <a href="https://www.youtube.com/@theplinths" target="_blank" rel="noopener">
+          <svg class="brand-icon youtube" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+    <div class="footer-fine">
+      <span>© 2026 The Plinths · Lund, Sweden</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================== PHOTO MODAL ====================== -->
+<div class="photo-modal">
+  <div class="photo-modal-content">
+    <span class="close-modal" aria-label="Close">✕</span>
+    <img src="" alt="Enlarged photo" />
+    <div class="photo-copyright"></div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script type="text/javascript">
+  (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "r7h3kukxa1");
+</script>
+
 </body>
-
 </html>
