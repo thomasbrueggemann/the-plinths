@@ -10,8 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const frame = document.getElementById('videoFrame');
   if (poster && frame) {
     poster.addEventListener('click', () => {
-      frame.src = 'https://www.youtube.com/embed/Z06eoUzI-Hk?autoplay=1&rel=0';
-      poster.classList.add('hidden');
+      window.open('https://www.youtube.com/watch?v=1xSOOxnFROs', '_blank');
     });
   }
 

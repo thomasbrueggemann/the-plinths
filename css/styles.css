@@ -238,6 +238,10 @@ body::after {
   right: 32px;
   z-index: 3;
 }
+.about-image-col {
+  display: flex;
+  flex-direction: column;
+}
 .about-credit {
   display: block;
   margin-top: 8px;
